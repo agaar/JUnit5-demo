@@ -3,8 +3,7 @@ package pl.raga;
 
 import org.junit.Test;
 
-import static junit.framework.TestCase.assertEquals;
-import static junit.framework.TestCase.assertTrue;
+import static junit.framework.TestCase.*;
 
 public class BankAccountTestJUnit4 {
 
@@ -39,7 +38,8 @@ public class BankAccountTestJUnit4 {
     @org.junit.Test(expected = IllegalArgumentException.class)
     public void withdraw_notBranch() throws Exception {
         double balance = account.withdraw(600.00, false);
-        assertEquals(400, balance, 0);
+        fail("Should have thrown IllegalArgumentException");
+        //assertEquals(400, balance, 0);
     }
 
     @org.junit.Test
